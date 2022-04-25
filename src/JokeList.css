@@ -37,3 +37,8 @@
     overflow: scroll;
     box-shadow: 0px 0px 6px 3px rgb(0 0 255 / 20%);
 }
+
+.JokeList-spinner {
+    text-align: center;
+    color: #fff;
+}
