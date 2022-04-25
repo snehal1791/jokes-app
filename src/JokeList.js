@@ -11,10 +11,19 @@ class  JokeList extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { jokes: [] };
+        this.state = { 
+            jokes: JSON.parse(window.localStorage.getItem("jokes") || "[]")
+        };
+        console.log(this.state.jokes);
     }
 
-    async componentDidMount() {
+    componentDidMount() {
+        if(this.state.jokes.length === 0) {
+            this.getJokes();
+        }
+    }
+
+    async getJokes() {
         let jokes = [];
         while(jokes.length < this.props.numJokes) {
             let res = await axios.get("https://icanhazdadjoke.com/", 
