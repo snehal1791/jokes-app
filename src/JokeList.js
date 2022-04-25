@@ -14,7 +14,7 @@ class  JokeList extends Component {
         this.state = { 
             jokes: JSON.parse(window.localStorage.getItem("jokes") || "[]")
         };
-        console.log(this.state.jokes);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -36,14 +36,23 @@ class  JokeList extends Component {
                 id: res.data.id
             });
         }
-        this.setState({ jokes: jokes })
+        this.setState(st => ({
+            jokes: [...st.jokes, ...jokes]
+        }),
+        () => window.localStorage.setItem("jokes", JSON.stringify(this.state.jokes))
+        )
     }
 
     handleVote(id, updateVote) {
         this.setState(st => ({
             jokes: st.jokes.map(j =>
                 j.id === id ? {...j, votes: j.votes + updateVote} : j)
-        }))
+        }),
+        () => window.localStorage.setItem("jokes", JSON.stringify(this.state.jokes)))
+    }
+
+    handleClick() {
+        this.getJokes();
     }
 
     render() {
@@ -54,7 +63,7 @@ class  JokeList extends Component {
                         <span>Jokes</span>
                     </h1>
                     <img src="https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg" alt="laughing emoji" />
-                    <button className="JokeList-getmore">New Jokes</button>
+                    <button className="JokeList-getmore" onClick={this.handleClick} >New Jokes</button>
                 </div>
                 <div className="JokeList-jokes">
                     {this.state.jokes.map( joke => (
