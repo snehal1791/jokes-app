@@ -5,21 +5,22 @@
 }
 
 .JokeList-sidebar {
-    background: #ed8d96;
+    background: #ffeff1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 30%;
     text-align: center;
-    box-shadow: inset 0px 0px 13px 4px rgb(0 0 255 / 20%);
+    border-radius: 0.35rem;
+    box-shadow: 0px 0px 6px 3px rgb(0 0 255 / 20%);
     z-index: 2;
 }
 
 .JokeList-title {
     font-size: 4rem;
     margin: 2rem;
-    color: #fff;
+    color: rgba(181, 84, 242, 0.755);
     font-weight: 400;
 }
 
@@ -34,7 +35,9 @@
     background: #fff;
     align-self: center;
     width: 70%;
-    overflow: scroll;
+    overflow-y: scroll;
+    border-top-right-radius: 0.35rem;
+    border-bottom-right-radius: 0.35rem;
     box-shadow: 0px 0px 6px 3px rgb(0 0 255 / 20%);
 }
 
