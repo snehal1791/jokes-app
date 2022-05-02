@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 class JokeList extends Component {
   static defaultProps = {
-    numJokes: 10,
+    numJokes: 5,
   };
 
   constructor(props) {
@@ -28,6 +28,7 @@ class JokeList extends Component {
   async getJokes() {
     try {
       let jokes = [];
+      console.log('render')
       while (jokes.length < this.props.numJokes) {
         let res = await axios.get("https://icanhazdadjoke.com/", {
           headers: { Accept: "application/json" },
