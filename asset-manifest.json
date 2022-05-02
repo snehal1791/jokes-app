@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/jokes-app/static/css/main.9ba5ac61.css",
+    "main.js": "/jokes-app/static/js/main.28728432.js",
+    "static/js/787.3db2aa79.chunk.js": "/jokes-app/static/js/787.3db2aa79.chunk.js",
+    "index.html": "/jokes-app/index.html",
+    "main.9ba5ac61.css.map": "/jokes-app/static/css/main.9ba5ac61.css.map",
+    "main.28728432.js.map": "/jokes-app/static/js/main.28728432.js.map",
+    "787.3db2aa79.chunk.js.map": "/jokes-app/static/js/787.3db2aa79.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ba5ac61.css",
+    "static/js/main.28728432.js"
+  ]
+}
